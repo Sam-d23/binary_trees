@@ -7,9 +7,9 @@ bst_t *bst_remove(bst_t *root, int value);
 
 /**
  * inorder_successor - the minimum value of a binary search tree is returned.
- * @root: points to the root node of the BST being searched.
+ * @root: points to the root node of the BST to search.
  *
- * Return: The minimum tree's value.
+ * Return: minimum value in tree.
  */
 bst_t *inorder_successor(bst_t *root)
 {
@@ -19,11 +19,10 @@ bst_t *inorder_successor(bst_t *root)
 }
 
 /**
- * bst_delete - a node from a binary search tree is deleted.
- * @root: points to the BST's root node.
+ * bst_delete - a node is deleted from a binary search tree.
+ * @root: points to the root node of the BST.
  * @node: points to the node to be deleted from the BST.
- *
- * Return: pointer to the emergent root node after deletion.
+ * Return:  pointer to new root node after deletion.
  */
 bst_t *bst_delete(bst_t *root, bst_t *node)
 {
@@ -60,12 +59,13 @@ bst_t *bst_delete(bst_t *root, bst_t *node)
 }
 
 /**
- * bst_remove_recursive - a node is removed from a binary search tree recursively.
- * @root: points to the root node of the BST from which a node is removed.
- * @node: points to the initial node in the BST.
- * @value: value to be removed from the BST.
+ * bst_remove_recursive - a node from a binary search
+ * tree is removed recursively.
+ * @root: points to the root node of the BST.
+ * @node: points to the recent node in the BST.
+ * @value: value to delete from the BST.
  *
- * Return: pointer to the current root node after deletion.
+ * Return: pointer to the root node upon deletion.
  */
 bst_t *bst_remove_recursive(bst_t *root, bst_t *node, int value)
 {
@@ -82,12 +82,12 @@ bst_t *bst_remove_recursive(bst_t *root, bst_t *node, int value)
 
 /**
  * bst_remove - a node is removed from a binary search tree.
- * @root: points to the root node of the BST from which a node is to be removed.
- * @value: value to be removed in the BST.
+ * @root: points to root node of the BST.
+ * @value: value to remove from the BST.
  *
- * Return: pointer to the current root node after deletion.
+ * Return: points to the new root node.
  *
- * Description: when the node being deleted has two children, it
+ * Description: If the node has two children, it
  *              is replaced by its first in-order successor.
  */
 bst_t *bst_remove(bst_t *root, int value)
